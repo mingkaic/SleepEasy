@@ -22,9 +22,21 @@
 		9803DAAB19FB06C400AFC574 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9803DA8A19FB06C400AFC574 /* UIKit.framework */; };
 		9803DAB319FB06C400AFC574 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9803DAB119FB06C400AFC574 /* InfoPlist.strings */; };
 		9803DAB519FB06C400AFC574 /* SleepEzLoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9803DAB419FB06C400AFC574 /* SleepEzLoginTests.m */; };
-		9803DAC919FB1EDB00AFC574 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9803DAC819FB1EDB00AFC574 /* SignupViewController.m */; };
 		98394F4519FC1B5A008A779B /* SleepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98394F4419FC1B5A008A779B /* SleepViewController.m */; };
+		986F2CEF19FC4A82008510D4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CED19FC4A82008510D4 /* Bolts.framework */; };
+		986F2CF019FC4A82008510D4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CEE19FC4A82008510D4 /* Parse.framework */; };
+		986F2CF219FC4AA5008510D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CF119FC4AA5008510D4 /* AudioToolbox.framework */; };
+		986F2CF419FC4AAD008510D4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CF319FC4AAD008510D4 /* CFNetwork.framework */; };
+		986F2CF619FC4ABF008510D4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CF519FC4ABF008510D4 /* CoreLocation.framework */; };
+		986F2CF819FC4ACB008510D4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CF719FC4ACB008510D4 /* libz.dylib */; };
+		986F2CFA19FC4AD3008510D4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CF919FC4AD3008510D4 /* MobileCoreServices.framework */; };
+		986F2CFC19FC4ADB008510D4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CFB19FC4ADB008510D4 /* QuartzCore.framework */; };
+		986F2CFE19FC4AE1008510D4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CFD19FC4AE1008510D4 /* Security.framework */; };
+		986F2D0019FC4AE8008510D4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CFF19FC4AE8008510D4 /* StoreKit.framework */; };
+		986F2D0219FC4AF7008510D4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2D0119FC4AF7008510D4 /* SystemConfiguration.framework */; };
 		9870170B19FB29CC001B395B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9870170A19FB29CC001B395B /* LoginViewController.m */; };
+		9877507919FC6A530030CA93 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9877507819FC6A530030CA93 /* CoreData.framework */; };
+		988BE62119FC39F700DB29B6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 988BE62019FC39F700DB29B6 /* ProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +70,24 @@
 		9803DAB019FB06C400AFC574 /* SleepEzLoginTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEzLoginTests-Info.plist"; sourceTree = "<group>"; };
 		9803DAB219FB06C400AFC574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9803DAB419FB06C400AFC574 /* SleepEzLoginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepEzLoginTests.m; sourceTree = "<group>"; };
-		9803DAC719FB1EDB00AFC574 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
-		9803DAC819FB1EDB00AFC574 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		98394F4319FC1B5A008A779B /* SleepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepViewController.h; sourceTree = "<group>"; };
 		98394F4419FC1B5A008A779B /* SleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepViewController.m; sourceTree = "<group>"; };
+		986F2CED19FC4A82008510D4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		986F2CEE19FC4A82008510D4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		986F2CF119FC4AA5008510D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		986F2CF319FC4AAD008510D4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		986F2CF519FC4ABF008510D4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		986F2CF719FC4ACB008510D4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		986F2CF919FC4AD3008510D4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		986F2CFB19FC4ADB008510D4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		986F2CFD19FC4AE1008510D4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		986F2CFF19FC4AE8008510D4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		986F2D0119FC4AF7008510D4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9870170919FB29CC001B395B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9870170A19FB29CC001B395B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9877507819FC6A530030CA93 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		988BE61F19FC39F700DB29B6 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		988BE62019FC39F700DB29B6 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +95,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9877507919FC6A530030CA93 /* CoreData.framework in Frameworks */,
+				986F2D0219FC4AF7008510D4 /* SystemConfiguration.framework in Frameworks */,
+				986F2D0019FC4AE8008510D4 /* StoreKit.framework in Frameworks */,
+				986F2CFE19FC4AE1008510D4 /* Security.framework in Frameworks */,
+				986F2CFC19FC4ADB008510D4 /* QuartzCore.framework in Frameworks */,
+				986F2CFA19FC4AD3008510D4 /* MobileCoreServices.framework in Frameworks */,
+				986F2CF819FC4ACB008510D4 /* libz.dylib in Frameworks */,
+				986F2CF619FC4ABF008510D4 /* CoreLocation.framework in Frameworks */,
 				9803DA8919FB06C400AFC574 /* CoreGraphics.framework in Frameworks */,
+				986F2CF419FC4AAD008510D4 /* CFNetwork.framework in Frameworks */,
+				986F2CF219FC4AA5008510D4 /* AudioToolbox.framework in Frameworks */,
 				9803DA8B19FB06C400AFC574 /* UIKit.framework in Frameworks */,
 				9803DA8719FB06C400AFC574 /* Foundation.framework in Frameworks */,
+				986F2CEF19FC4A82008510D4 /* Bolts.framework in Frameworks */,
+				986F2CF019FC4A82008510D4 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +148,18 @@
 		9803DA8519FB06C400AFC574 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9877507819FC6A530030CA93 /* CoreData.framework */,
+				986F2D0119FC4AF7008510D4 /* SystemConfiguration.framework */,
+				986F2CFF19FC4AE8008510D4 /* StoreKit.framework */,
+				986F2CFD19FC4AE1008510D4 /* Security.framework */,
+				986F2CFB19FC4ADB008510D4 /* QuartzCore.framework */,
+				986F2CF919FC4AD3008510D4 /* MobileCoreServices.framework */,
+				986F2CF719FC4ACB008510D4 /* libz.dylib */,
+				986F2CF519FC4ABF008510D4 /* CoreLocation.framework */,
+				986F2CF319FC4AAD008510D4 /* CFNetwork.framework */,
+				986F2CF119FC4AA5008510D4 /* AudioToolbox.framework */,
+				986F2CED19FC4A82008510D4 /* Bolts.framework */,
+				986F2CEE19FC4A82008510D4 /* Parse.framework */,
 				9803DA8619FB06C400AFC574 /* Foundation.framework */,
 				9803DA8819FB06C400AFC574 /* CoreGraphics.framework */,
 				9803DA8A19FB06C400AFC574 /* UIKit.framework */,
@@ -170,10 +218,10 @@
 				9803DA9F19FB06C400AFC574 /* ViewController.m */,
 				9870170919FB29CC001B395B /* LoginViewController.h */,
 				9870170A19FB29CC001B395B /* LoginViewController.m */,
-				9803DAC719FB1EDB00AFC574 /* SignupViewController.h */,
-				9803DAC819FB1EDB00AFC574 /* SignupViewController.m */,
 				98394F4319FC1B5A008A779B /* SleepViewController.h */,
 				98394F4419FC1B5A008A779B /* SleepViewController.m */,
+				988BE61F19FC39F700DB29B6 /* ProfileViewController.h */,
+				988BE62019FC39F700DB29B6 /* ProfileViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -279,8 +327,8 @@
 				98394F4519FC1B5A008A779B /* SleepViewController.m in Sources */,
 				9803DAA019FB06C400AFC574 /* ViewController.m in Sources */,
 				9803DA9719FB06C400AFC574 /* AppDelegate.m in Sources */,
-				9803DAC919FB1EDB00AFC574 /* SignupViewController.m in Sources */,
 				9803DA9319FB06C400AFC574 /* main.m in Sources */,
+				988BE62119FC39F700DB29B6 /* ProfileViewController.m in Sources */,
 				9870170B19FB29CC001B395B /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +464,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1.4.2",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEzLogin-Prefix.pch";
 				INFOPLIST_FILE = "SleepEzLogin/SleepEzLogin-Info.plist";
@@ -429,6 +482,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/parse-library-1.4.2",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEzLogin-Prefix.pch";
 				INFOPLIST_FILE = "SleepEzLogin/SleepEzLogin-Info.plist";

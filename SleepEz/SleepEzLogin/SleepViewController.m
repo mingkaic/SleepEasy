@@ -17,14 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self performSegueWithIdentifier: @"begin_login" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
