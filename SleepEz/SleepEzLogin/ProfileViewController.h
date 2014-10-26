@@ -10,5 +10,19 @@
 #import <Parse/Parse.h>
 
 @interface ProfileViewController : ViewController
+
+@property (weak, nonatomic) IBOutlet UITextField *usrField;
+
+@property (weak, nonatomic) IBOutlet UITextField *pwField;
+
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+
+@property (weak, nonatomic) IBOutlet UITextField *ageField;
+
+- (IBAction)UpdateClick:(id)sender;
+
+- (IBAction)ResetClick:(id)sender;
+
 - (IBAction)LogoutClick:(id)sender;
+
 @end

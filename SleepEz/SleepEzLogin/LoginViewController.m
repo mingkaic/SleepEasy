@@ -148,4 +148,7 @@
     [self ScreenUpdate];
 }
 
+- (IBAction)forgot_pw:(id)sender {
+    [self performSegueWithIdentifier:@"forgot_pw" sender:self];
+}
 @end

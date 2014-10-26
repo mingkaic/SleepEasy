@@ -36,6 +36,7 @@
 		986F2D0219FC4AF7008510D4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2D0119FC4AF7008510D4 /* SystemConfiguration.framework */; };
 		9870170B19FB29CC001B395B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9870170A19FB29CC001B395B /* LoginViewController.m */; };
 		9877507919FC6A530030CA93 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9877507819FC6A530030CA93 /* CoreData.framework */; };
+		987C748A19FCCCA500EF1D6C /* ForgotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987C748919FCCCA500EF1D6C /* ForgotViewController.m */; };
 		988BE62119FC39F700DB29B6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 988BE62019FC39F700DB29B6 /* ProfileViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,8 @@
 		9870170919FB29CC001B395B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9870170A19FB29CC001B395B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9877507819FC6A530030CA93 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		987C748819FCCCA500EF1D6C /* ForgotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotViewController.h; sourceTree = "<group>"; };
+		987C748919FCCCA500EF1D6C /* ForgotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotViewController.m; sourceTree = "<group>"; };
 		988BE61F19FC39F700DB29B6 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		988BE62019FC39F700DB29B6 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		98ED008719FCA050002DDA44 /* sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.caf; sourceTree = "<group>"; };
@@ -219,10 +222,9 @@
 		98394F4219FC1953008A779B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				98DC9CA219FCCA9F00EA551E /* login/signup */,
 				9803DA9E19FB06C400AFC574 /* ViewController.h */,
 				9803DA9F19FB06C400AFC574 /* ViewController.m */,
-				9870170919FB29CC001B395B /* LoginViewController.h */,
-				9870170A19FB29CC001B395B /* LoginViewController.m */,
 				988BE61F19FC39F700DB29B6 /* ProfileViewController.h */,
 				988BE62019FC39F700DB29B6 /* ProfileViewController.m */,
 			);
@@ -236,6 +238,17 @@
 				98394F4419FC1B5A008A779B /* SleepViewController.m */,
 			);
 			name = SleepController;
+			sourceTree = "<group>";
+		};
+		98DC9CA219FCCA9F00EA551E /* login/signup */ = {
+			isa = PBXGroup;
+			children = (
+				987C748819FCCCA500EF1D6C /* ForgotViewController.h */,
+				987C748919FCCCA500EF1D6C /* ForgotViewController.m */,
+				9870170919FB29CC001B395B /* LoginViewController.h */,
+				9870170A19FB29CC001B395B /* LoginViewController.m */,
+			);
+			name = login/signup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98394F4519FC1B5A008A779B /* SleepViewController.m in Sources */,
+				987C748A19FCCCA500EF1D6C /* ForgotViewController.m in Sources */,
 				9803DAA019FB06C400AFC574 /* ViewController.m in Sources */,
 				9803DA9719FB06C400AFC574 /* AppDelegate.m in Sources */,
 				9803DA9319FB06C400AFC574 /* main.m in Sources */,

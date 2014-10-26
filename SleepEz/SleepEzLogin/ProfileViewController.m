@@ -19,14 +19,44 @@
     [super viewDidLoad];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self SetText];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)LogoutClick:(id)sender {
+- (IBAction)UpdateClick:(id)sender
+{
+    PFUser *user = [PFUser currentUser];
+    user.username = _usrField.text;
+    user.password = _pwField.text;
+    user.email = _emailField.text;
+    user[@"age"] = _ageField.text;
+    [user saveInBackground];
+}
+
+- (IBAction)ResetClick:(id)sender
+{
+    [self SetText];
+}
+
+- (void) SetText
+{
+    PFUser *user = [PFUser currentUser];
+    _usrField.text = user.username;
+    _pwField.text = user.password;
+    _emailField.text = user.email;
+    _ageField.text = user[@"age"];
+}
+
+- (IBAction)LogoutClick:(id)sender
+{
     [PFUser logOut];
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }
+
 @end

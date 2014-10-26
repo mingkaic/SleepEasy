@@ -37,4 +37,6 @@
 
 @property BOOL loginscreen;
 
+- (IBAction)forgot_pw:(id)sender;
+
 @end
