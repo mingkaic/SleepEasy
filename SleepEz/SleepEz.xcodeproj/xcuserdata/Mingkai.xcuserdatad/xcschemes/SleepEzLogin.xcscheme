@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9803DA8219FB06C400AFC574"
-               BuildableName = "SleepEzLogin.app"
-               BlueprintName = "SleepEzLogin"
-               ReferencedContainer = "container:SleepEzLogin.xcodeproj">
+               BuildableName = "SleepEz.app"
+               BlueprintName = "SleepEz"
+               ReferencedContainer = "container:SleepEz.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9803DAA619FB06C400AFC574"
-               BuildableName = "SleepEzLoginTests.xctest"
-               BlueprintName = "SleepEzLoginTests"
-               ReferencedContainer = "container:SleepEzLogin.xcodeproj">
+               BuildableName = "SleepEzTests.xctest"
+               BlueprintName = "SleepEzTests"
+               ReferencedContainer = "container:SleepEz.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9803DA8219FB06C400AFC574"
-            BuildableName = "SleepEzLogin.app"
-            BlueprintName = "SleepEzLogin"
-            ReferencedContainer = "container:SleepEzLogin.xcodeproj">
+            BuildableName = "SleepEz.app"
+            BlueprintName = "SleepEz"
+            ReferencedContainer = "container:SleepEz.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9803DA8219FB06C400AFC574"
-            BuildableName = "SleepEzLogin.app"
-            BlueprintName = "SleepEzLogin"
-            ReferencedContainer = "container:SleepEzLogin.xcodeproj">
+            BuildableName = "SleepEz.app"
+            BlueprintName = "SleepEz"
+            ReferencedContainer = "container:SleepEz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9803DA8219FB06C400AFC574"
-            BuildableName = "SleepEzLogin.app"
-            BlueprintName = "SleepEzLogin"
-            ReferencedContainer = "container:SleepEzLogin.xcodeproj">
+            BuildableName = "SleepEz.app"
+            BlueprintName = "SleepEz"
+            ReferencedContainer = "container:SleepEz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
