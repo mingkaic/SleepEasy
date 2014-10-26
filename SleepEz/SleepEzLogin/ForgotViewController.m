@@ -26,12 +26,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)ResetPw:(id)sender {
+- (IBAction)ResetPw:(id)sender
+{
     [PFUser requestPasswordResetForEmailInBackground:_emailField.text];
     [self performSegueWithIdentifier:@"remember" sender:self];
 }
 
-- (IBAction)remember:(id)sender {
+- (IBAction)remember:(id)sender
+{
     [self performSegueWithIdentifier:@"remember" sender:self];
 }
 @end

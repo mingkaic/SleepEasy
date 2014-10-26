@@ -38,6 +38,8 @@
 		9877507919FC6A530030CA93 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9877507819FC6A530030CA93 /* CoreData.framework */; };
 		987C748A19FCCCA500EF1D6C /* ForgotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987C748919FCCCA500EF1D6C /* ForgotViewController.m */; };
 		988BE62119FC39F700DB29B6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 988BE62019FC39F700DB29B6 /* ProfileViewController.m */; };
+		98C2CC7B19FD6B08002C4D31 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C2CC7A19FD6B08002C4D31 /* TableCell.m */; };
+		98FADC0B19FD75C900616EFD /* ProgressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FADC0A19FD75C900616EFD /* ProgressTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +70,7 @@
 		9803DAA119FB06C400AFC574 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9803DAA719FB06C400AFC574 /* SleepEzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepEzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9803DAA819FB06C400AFC574 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9803DAB019FB06C400AFC574 /* SleepEzLoginTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEzLoginTests-Info.plist"; sourceTree = "<group>"; };
+		9803DAB019FB06C400AFC574 /* SleepEzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEzTests-Info.plist"; sourceTree = "<group>"; };
 		9803DAB219FB06C400AFC574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9803DAB419FB06C400AFC574 /* SleepEzLoginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepEzLoginTests.m; sourceTree = "<group>"; };
 		98394F4319FC1B5A008A779B /* SleepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepViewController.h; sourceTree = "<group>"; };
@@ -91,7 +93,11 @@
 		987C748919FCCCA500EF1D6C /* ForgotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotViewController.m; sourceTree = "<group>"; };
 		988BE61F19FC39F700DB29B6 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		988BE62019FC39F700DB29B6 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		98C2CC7919FD6B08002C4D31 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableCell.h; path = ../TableCell.h; sourceTree = "<group>"; };
+		98C2CC7A19FD6B08002C4D31 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableCell.m; path = ../TableCell.m; sourceTree = "<group>"; };
 		98ED008719FCA050002DDA44 /* sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.caf; sourceTree = "<group>"; };
+		98FADC0919FD75C900616EFD /* ProgressTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressTableViewController.h; sourceTree = "<group>"; };
+		98FADC0A19FD75C900616EFD /* ProgressTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,7 @@
 		9803DA8C19FB06C400AFC574 /* SleepEz */ = {
 			isa = PBXGroup;
 			children = (
+				98C2CC7519FD64EB002C4D31 /* Progress */,
 				984AA1F019FC898C00F7278C /* SleepController */,
 				9803DA9519FB06C400AFC574 /* AppDelegate.h */,
 				9803DA9619FB06C400AFC574 /* AppDelegate.m */,
@@ -213,7 +220,7 @@
 		9803DAAF19FB06C400AFC574 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9803DAB019FB06C400AFC574 /* SleepEzLoginTests-Info.plist */,
+				9803DAB019FB06C400AFC574 /* SleepEzTests-Info.plist */,
 				9803DAB119FB06C400AFC574 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -238,6 +245,17 @@
 				98394F4419FC1B5A008A779B /* SleepViewController.m */,
 			);
 			name = SleepController;
+			sourceTree = "<group>";
+		};
+		98C2CC7519FD64EB002C4D31 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				98C2CC7919FD6B08002C4D31 /* TableCell.h */,
+				98C2CC7A19FD6B08002C4D31 /* TableCell.m */,
+				98FADC0919FD75C900616EFD /* ProgressTableViewController.h */,
+				98FADC0A19FD75C900616EFD /* ProgressTableViewController.m */,
+			);
+			name = Progress;
 			sourceTree = "<group>";
 		};
 		98DC9CA219FCCA9F00EA551E /* login/signup */ = {
@@ -349,6 +367,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98FADC0B19FD75C900616EFD /* ProgressTableViewController.m in Sources */,
+				98C2CC7B19FD6B08002C4D31 /* TableCell.m in Sources */,
 				98394F4519FC1B5A008A779B /* SleepViewController.m in Sources */,
 				987C748A19FCCCA500EF1D6C /* ForgotViewController.m in Sources */,
 				9803DAA019FB06C400AFC574 /* ViewController.m in Sources */,

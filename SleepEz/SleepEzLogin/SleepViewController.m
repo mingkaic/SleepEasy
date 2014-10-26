@@ -94,20 +94,28 @@
 }
 
 - (IBAction)StopSleep:(id)sender {
+    NSDate *endtime = [NSDate date];
     _sleeping = NO;
     NSLog(@"No longer sleeping");
     
     _sleepBtn.hidden = NO;
     _stopsleepBtn.hidden = YES;
     
-    NSDate *endtime = [NSDate date];
-    
+    NSLog(@"sending sleep data...");
     PFUser *usr = [PFUser currentUser];
     PFObject *object = [PFObject objectWithClassName:@"Sleep"];
     
-    object[@"username"] = usr.username;
+    NSTimeInterval interval = [endtime timeIntervalSinceDate:_sleepTime];
+    
+    NSString* duration = [NSString stringWithFormat:@"%02li:%02li:%02li",
+                     lround(floor(interval / 3600.)) % 100,
+                     lround(floor(interval / 60.)) % 60,
+                     lround(floor(interval)) % 60];
+    
+    object[@"userId"] = usr.objectId;
+    NSLog(usr.objectId);
     object[@"beginSleep"] = _sleepTime;
-    object[@"endSleep"] = endtime;
+    object[@"durationSleep"] = duration;
     [object saveInBackground];
 }
 
