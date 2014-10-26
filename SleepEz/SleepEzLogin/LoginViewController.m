@@ -17,19 +17,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    PFUser *user = [PFUser currentUser];
+    if (user.username != nil) {
+        [self performSegueWithIdentifier: @"login_success" sender:self];
+    }
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
     if (![defaults boolForKey:@"registered"]) {
         NSLog(@"No user registered");
-        _loginBtn.hidden = YES;
+        _loginscreen = NO;
     }
     else {
         NSLog(@"user is registered");
-        _repwField.hidden = YES;
-        _mailField.hidden = YES;
-        _signupBtn.hidden = YES;
+        _loginscreen = YES;
     }
+    [self ScreenUpdate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,8 +43,27 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)ScreenUpdate
+{
+    _repwField.hidden = _mailField.hidden =
+    _signupBtn.hidden = _manLogBtn.hidden = _loginscreen;
+    _manRegBtn.hidden = _loginBtn.hidden = !_loginscreen;
+}
+
+- (void)ScreenClear
+{
+    _usrField.text = nil;
+    _pwField.text = nil;
+    _repwField.text = nil;
+    _mailField.text = nil;
+}
+
 - (IBAction)SignupClick:(id)sender
 {
+    [_usrField resignFirstResponder];
+    [_pwField resignFirstResponder];
+    [_repwField resignFirstResponder];
+    [_mailField resignFirstResponder];
     @try {
         if([[self.usrField text] isEqualToString:@""] ||
            [[self.pwField text] isEqualToString:@""] ||
@@ -57,7 +82,8 @@
     }
 }
 
-- (void) checkPasswordMatch {
+- (void) checkPasswordMatch
+{
     if ([_pwField.text isEqualToString:_repwField.text]) {
         NSLog(@"Passwords match");
         [self registerNewUser];
@@ -69,38 +95,57 @@
 
 - (void) registerNewUser
 {
+    NSLog(@"registering new user...");
+    // default data
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    //PFObject* usrData = [PFObject objectWithClassName:@"usrData"];
-    
-    [defaults setObject:_usrField.text forKey:@"username"];
-    [defaults setObject:_pwField.text forKey:@"password"];
-    [defaults setObject:_mailField.text forKey:@"email"];
     [defaults setBool:YES forKey:@"registered"];
     
-    [self performSegueWithIdentifier:@"login_success" sender:self];
-    [self alertStatus:@"you have registered a new user" : @"Success!" :0];
+    // parse data
+    PFUser* newusr = [PFUser user];
+    newusr.username = _usrField.text;
+    newusr.email = _mailField.text;
+    newusr.password = _pwField.text;
+    [newusr signUpInBackgroundWithBlock: ^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            NSLog(@"Registration successful");
+            [self ScreenClear];
+            [self performSegueWithIdentifier:@"login_success" sender:self];
+        }
+        else {
+            NSLog(@"There was an error in registration");
+        }
+    }];
 }
 
 - (IBAction)LoginClick:(id)sender
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    @try {
-        if([_usrField.text isEqualToString: [defaults objectForKey:@"username"]] &&
-           [_pwField.text isEqualToString: [defaults objectForKey:@"password"]]) {
-            _usrField.text = nil;
-            _pwField.text = nil;
-            // verification successful
+    // uses parse server
+    [PFUser logInWithUsernameInBackground:_usrField.text password:_pwField.text block:^(PFUser* user, NSError *error) {
+        if (!error) {
+            // authentication successful
             NSLog(@"login credentials correct");
+            [self ScreenClear];
             [self performSegueWithIdentifier:@"login_success" sender:self];
-        } else {
-            [self alertStatus:@"Incorrect Username or Password" :@"Sign in Failed!" :0];
         }
-    }
-    @catch (NSException * e) {
-        NSLog(@"Exception: %@", e);
-        [self alertStatus:@"Login Failed." :@"Error!" :0];
-    }
+        else {
+            NSLog(@"Exception: %@", error);
+            [self alertStatus:@"Login Failed." :@"Oooops!" :0];
+        }
+    }];
+}
+
+// switch from login page to register page
+- (IBAction)ManualRegister:(id)sender {
+    _loginscreen = NO;
+    [self ScreenClear];
+    [self ScreenUpdate];
+}
+
+// switch from user page to login page
+- (IBAction)ManualLogin:(id)sender {
+    _loginscreen = YES;
+    [self ScreenClear];
+    [self ScreenUpdate];
 }
 
 @end

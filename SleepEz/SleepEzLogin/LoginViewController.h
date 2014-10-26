@@ -26,4 +26,15 @@
 - (IBAction)SignupClick:(id)sender;
 
 - (IBAction)LoginClick:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *manRegBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *manLogBtn;
+
+- (IBAction)ManualRegister:(id)sender;
+
+- (IBAction)ManualLogin:(id)sender;
+
+@property BOOL loginscreen;
+
 @end
