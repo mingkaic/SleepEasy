@@ -35,6 +35,7 @@
 		986F2D0019FC4AE8008510D4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2CFF19FC4AE8008510D4 /* StoreKit.framework */; };
 		986F2D0219FC4AF7008510D4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 986F2D0119FC4AF7008510D4 /* SystemConfiguration.framework */; };
 		9870170B19FB29CC001B395B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9870170A19FB29CC001B395B /* LoginViewController.m */; };
+		98753B3C19FE052E0023DDB7 /* GPSTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98753B3B19FE052E0023DDB7 /* GPSTrackViewController.m */; };
 		9877507919FC6A530030CA93 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9877507819FC6A530030CA93 /* CoreData.framework */; };
 		987C748A19FCCCA500EF1D6C /* ForgotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987C748919FCCCA500EF1D6C /* ForgotViewController.m */; };
 		988BE62119FC39F700DB29B6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 988BE62019FC39F700DB29B6 /* ProfileViewController.m */; };
@@ -88,6 +89,8 @@
 		986F2D0119FC4AF7008510D4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9870170919FB29CC001B395B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9870170A19FB29CC001B395B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		98753B3A19FE052E0023DDB7 /* GPSTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSTrackViewController.h; sourceTree = "<group>"; };
+		98753B3B19FE052E0023DDB7 /* GPSTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSTrackViewController.m; sourceTree = "<group>"; };
 		9877507819FC6A530030CA93 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		987C748819FCCCA500EF1D6C /* ForgotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotViewController.h; sourceTree = "<group>"; };
 		987C748919FCCCA500EF1D6C /* ForgotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotViewController.m; sourceTree = "<group>"; };
@@ -181,6 +184,7 @@
 		9803DA8C19FB06C400AFC574 /* SleepEz */ = {
 			isa = PBXGroup;
 			children = (
+				98753B3D19FE05360023DDB7 /* GPS */,
 				98C2CC7519FD64EB002C4D31 /* Progress */,
 				984AA1F019FC898C00F7278C /* SleepController */,
 				9803DA9519FB06C400AFC574 /* AppDelegate.h */,
@@ -245,6 +249,15 @@
 				98394F4419FC1B5A008A779B /* SleepViewController.m */,
 			);
 			name = SleepController;
+			sourceTree = "<group>";
+		};
+		98753B3D19FE05360023DDB7 /* GPS */ = {
+			isa = PBXGroup;
+			children = (
+				98753B3A19FE052E0023DDB7 /* GPSTrackViewController.h */,
+				98753B3B19FE052E0023DDB7 /* GPSTrackViewController.m */,
+			);
+			name = GPS;
 			sourceTree = "<group>";
 		};
 		98C2CC7519FD64EB002C4D31 /* Progress */ = {
@@ -368,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98FADC0B19FD75C900616EFD /* ProgressTableViewController.m in Sources */,
+				98753B3C19FE052E0023DDB7 /* GPSTrackViewController.m in Sources */,
 				98C2CC7B19FD6B08002C4D31 /* TableCell.m in Sources */,
 				98394F4519FC1B5A008A779B /* SleepViewController.m in Sources */,
 				987C748A19FCCCA500EF1D6C /* ForgotViewController.m in Sources */,

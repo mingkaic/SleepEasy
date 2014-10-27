@@ -39,6 +39,9 @@
 // retrieve from Parse
 - (void)retrieveData
 {
+    _sleepTimeData = [NSMutableArray array];
+    _sleepDurData = [NSMutableArray array];
+    
     PFQuery *query1 = [PFQuery queryWithClassName:@"Sleep"];
     //PFQuery *query2 = [PFQuery queryWithClassName:@"Exercise"];
     PFUser *user = [PFUser currentUser];
@@ -51,7 +54,7 @@
             
             for (PFObject* object in objects) {
                 NSDate* start = object[@"beginSleep"];
-                NSDate* duration = object[@"durationSleep"];
+                NSString* duration = object[@"durationSleep"];
                 
                 NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
                 formatter.timeZone = [NSTimeZone defaultTimeZone];
@@ -60,33 +63,30 @@
                 
                 NSString* time = [formatter stringFromDate: start];
                 
-                NSLog(time);
-                NSLog(duration);
-                
                 [_sleepTimeData addObject: time];
                 [_sleepDurData addObject: duration];
-                NSLog(@"end sleep retrieval");
             }
+            [self.tableView reloadData]; // refresh page once done querying
+            NSLog(@"end sleep retrieval");
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
     /*[query2 whereKey:@"username" equalTo:user.username];
-    [query2 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        NSLog(@"Retrieving exercise data...");
-        if (!error) {
-            // search successful.
-            NSLog(@"Successfully retrieved %lu data entries.", (unsigned long)objects.count);
-            
-            _exercData = objects;
-            NSLog(@"end exercise retrieval");
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];*/
-    NSLog(@"end retrieval");
+     [query2 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+     NSLog(@"Retrieving exercise data...");
+     if (!error) {
+     // search successful.
+     NSLog(@"Successfully retrieved %lu data entries.", (unsigned long)objects.count);
+     
+     _exercData = objects;
+     NSLog(@"end exercise retrieval");
+     } else {
+     // Log details of the failure
+     NSLog(@"Error: %@ %@", error, [error userInfo]);
+     }
+     }];*/
 }
 
 #pragma mark - Table view data source
@@ -99,6 +99,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"%lu", (unsigned long)_sleepTimeData.count);
     // Return the number of rows in the section.
     return _sleepTimeData.count;
 }
@@ -116,7 +117,6 @@
     
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
