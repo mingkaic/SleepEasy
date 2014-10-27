@@ -1,0 +1,74 @@
+Version Control Document
+=================
+Version 0.1
+=================
+Date: 24/10/2014
+Summary: Project setup. Consists of only login handling classes; no main system functions
+C
+hanges: 
+------------------
+LoginViewController
+SignupViewController
+ViewController
+
+Errors/Issue:
+None
+=================
+Version 0.2
+=================
+Date: 25/10/2014
+Summary: Project Essential Features Integration. Added SleepRecord Function and Parse Database
+
+Changes:
+------------------
+SignupViewController (removed)
+LoginViewController (incorporates Signup)
+ForgotViewController (handles forgot password)
+SleepViewController
+Sound file
+Bolts.framework
+Parse.framework
+
+Errors/Issue:
+------------------
+Alarm Push Notification only occurs when the application is running the background (Possible User Issue)
+Sound file does not play
+=================
+Version 0.3
+=================
+Date: 26/10/2014
+Summary: Project Essential Feature Integration. Added Exercise Record, and progress view
+
+Changes: 
+------------------
+GPSTrackerViewController
+ProgressTableViewController
+TableCell
+
+Resolved:
+------------------
+Sound file converted to .caf ; it now plays
+
+Errors/Issue:
+------------------
+Xcode 6 Cannot build the system: InfoPlist.strings/SleepEz-Info.plist cannot be found
+Xcode 4 Cannot build the system: The identity 'iPhone Developer' doesn't match any valid, non-expired certificate/privte key pair in your keychains
+
+=================
+Version 1.0
+=================
+Date: 27/10/2014
+Summary: UI formating, fix to Xcode 4 issue
+
+Changes: 
+------------------
+MKChenCertificate.p12
+README.txt
+
+Resolved:
+------------------
+import Certification to resolve "The identity 'iPhone Developer' doesn't match any valid, non-expired certificate/privte key pair in your keychains" issue
+
+Errors/Issue:
+------------------
+Xcode 6 Cannot build the system: InfoPlist.strings/SleepEz-Info.plist cannot be found
