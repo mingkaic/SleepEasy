@@ -27,7 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self retrieveData];
+    //[self retrieveData];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self retrieveData]; // refreshes whenever reviewing progress tab
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,9 +46,18 @@
 {
     _sleepTimeData = [NSMutableArray array];
     _sleepDurData = [NSMutableArray array];
+    _exercStartTimeData = [NSMutableArray array];
+    _exercTimeData = [NSMutableArray array];
+    _exercSpeedData = [NSMutableArray array];
+    _exercDistData = [NSMutableArray array];
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone defaultTimeZone];
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    formatter.dateStyle = NSDateFormatterShortStyle;
     
     PFQuery *query1 = [PFQuery queryWithClassName:@"Sleep"];
-    //PFQuery *query2 = [PFQuery queryWithClassName:@"Exercise"];
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Exercise"];
     PFUser *user = [PFUser currentUser];
     [query1 whereKey:@"userId" equalTo:user.objectId];
     [query1 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -54,39 +68,53 @@
             
             for (PFObject* object in objects) {
                 NSDate* start = object[@"beginSleep"];
-                NSString* duration = object[@"durationSleep"];
-                
-                NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-                formatter.timeZone = [NSTimeZone defaultTimeZone];
-                formatter.timeStyle = NSDateFormatterShortStyle;
-                formatter.dateStyle = NSDateFormatterShortStyle;
-                
                 NSString* time = [formatter stringFromDate: start];
+                NSString* duration = object[@"durationSleep"];
                 
                 [_sleepTimeData addObject: time];
                 [_sleepDurData addObject: duration];
             }
-            [self.tableView reloadData]; // refresh page once done querying
+            // refresh section 1 once done querying
+            NSRange range = NSMakeRange(0, 1);
+            NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:range];
+            [self.tableView reloadSections:section withRowAnimation:UITableViewRowAnimationNone];
             NSLog(@"end sleep retrieval");
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-    /*[query2 whereKey:@"username" equalTo:user.username];
-     [query2 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-     NSLog(@"Retrieving exercise data...");
-     if (!error) {
-     // search successful.
-     NSLog(@"Successfully retrieved %lu data entries.", (unsigned long)objects.count);
-     
-     _exercData = objects;
-     NSLog(@"end exercise retrieval");
-     } else {
-     // Log details of the failure
-     NSLog(@"Error: %@ %@", error, [error userInfo]);
-     }
-     }];*/
+    [query2 whereKey:@"userId" equalTo:user.objectId];
+    [query2 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"Retrieving exerc data...");
+        if (!error) {
+            // search successful.
+            NSLog(@"Successfully retrieved %lu data entries.", (unsigned long)objects.count);
+            
+            for (PFObject* object in objects) {
+                NSDate* start = object[@"BeginTime"];
+                NSString* time = [formatter stringFromDate: start];
+                NSString* duration = object[@"runtime"];
+                NSString* speed = object[@"speed"];
+                NSString* dist = object[@"distance"];
+                
+                NSLog(time);
+                
+                [_exercStartTimeData addObject: time];
+                [_exercTimeData addObject: duration];
+                [_exercSpeedData addObject: speed];
+                [_exercDistData addObject: dist];
+            }
+            // refresh section 2 once done querying
+            NSRange range = NSMakeRange(1, 1);
+            NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:range];
+            [self.tableView reloadSections:section withRowAnimation:UITableViewRowAnimationNone];
+            NSLog(@"end exerc retrieval");
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 #pragma mark - Table view data source
@@ -94,26 +122,54 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%lu", (unsigned long)_sleepTimeData.count);
+    NSLog(@"section %lu", (long unsigned)section);
     // Return the number of rows in the section.
-    return _sleepTimeData.count;
+    if (section == 0) {
+        return _sleepTimeData.count;
+    }
+    else {
+        return _exercStartTimeData.count;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return @"Sleep Data";
+    }
+    else {
+        return @"Exercise Data";
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableCell" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"TableCell";
+    TableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     int row = [indexPath row];
     
-    NSLog(@"Populating row %d", row);
-    
-    cell.TitleLabel.text = _sleepTimeData[row];
-    cell.DescriptionLabel.text = _sleepDurData[row];
+    if (indexPath.section == 0) {
+        NSLog(@"Populating sleep row %d", row);
+        cell.TitleLabel.text = _sleepTimeData[row];
+        cell.DescriptionLabel.text = _sleepDurData[row];
+        cell.SpeedLabel.hidden = cell.DistanceLabel.hidden =
+        cell.SpeedTag.hidden = cell.DistanceTag.hidden = YES;
+    }
+    else {
+        NSLog(@"Populating exercise row %d", row);
+        cell.TitleLabel.text = _exercStartTimeData[row];
+        cell.DescriptionLabel.text = _exercTimeData[row];
+        cell.SpeedLabel.hidden = cell.DistanceLabel.hidden =
+        cell.SpeedTag.hidden = cell.DistanceTag.hidden = NO;
+        cell.SpeedLabel.text = _exercSpeedData[row];
+        cell.DistanceLabel.text = _exercDistData[row];
+    }
     
     return cell;
 }

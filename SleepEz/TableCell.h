@@ -11,6 +11,15 @@
 @interface TableCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *TitleLabel;
+
 @property (strong, nonatomic) IBOutlet UILabel *DescriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *SpeedLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *DistanceLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *DistanceTag;
+
+@property (weak, nonatomic) IBOutlet UILabel *SpeedTag;
 
 @end

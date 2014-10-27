@@ -17,6 +17,7 @@
 double totalDistance;
 CLLocationSpeed speed;
 bool onClickStartTrackingButton;
+
 @synthesize mapview;
 
 - (void)viewDidLoad
@@ -80,11 +81,12 @@ bool onClickStartTrackingButton;
         mapview.showsUserLocation = YES;
         onClickStartTrackingButton = TRUE;
         [sender setTitle:@"Stop Tracking" forState:UIControlStateNormal];
-        
+        _MyStartTime = [NSDate date];
     }
     // if onClick "Stop Tracking" button, then stop  location manager and change the text of the button to "Start Tracking"
     else {
         [self stopTracking];
+        [self sendData];
         // stop timer
         [_myTimer invalidate];
         onClickStartTrackingButton = FALSE;
@@ -263,16 +265,17 @@ bool onClickStartTrackingButton;
 // attach this function to an action
 - (void)sendData{
     // enter datas
-    NSDate* totaltime = nil;
-    NSString* speed = nil;
-    NSString* distance = nil;
+    NSString* totaltime = [NSString stringWithFormat:@"%d", _currentTimeInSeconds];
+    NSString* speedData = [NSString stringWithFormat:@"%f", speed];
+    NSString* distance = [NSString stringWithFormat:@"%f", totalDistance];
     
     // leave as it is
     PFUser *usr = [PFUser currentUser];
     PFObject *object = [PFObject objectWithClassName:@"Exercise"];
     object[@"userId"] = usr.objectId;
+    object[@"BeginTime"] = _MyStartTime;
     object[@"runtime"] = totaltime;
-    object[@"speed"] = speed;
+    object[@"speed"] = speedData;
     object[@"distance"] = distance;
     [object saveInBackground];
 }

@@ -47,4 +47,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *startTrackingButton;
 @property (weak, nonatomic) NSTimer *myTimer;
 @property int currentTimeInSeconds;
+
+@property (strong, nonatomic) NSDate* MyStartTime;
 @end

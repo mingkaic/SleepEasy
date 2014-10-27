@@ -12,9 +12,11 @@
 @interface ProgressTableViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray* sleepTimeData;
-
 @property (strong, nonatomic) NSMutableArray* sleepDurData;
 
-@property (strong, nonatomic) NSArray* exercData;
+@property (strong, nonatomic) NSMutableArray* exercStartTimeData;
+@property (strong, nonatomic) NSMutableArray* exercTimeData;
+@property (strong, nonatomic) NSMutableArray* exercSpeedData;
+@property (strong, nonatomic) NSMutableArray* exercDistData;
 
 @end
