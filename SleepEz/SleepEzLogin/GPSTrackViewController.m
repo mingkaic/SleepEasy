@@ -265,7 +265,10 @@ bool onClickStartTrackingButton;
 // attach this function to an action
 - (void)sendData{
     // enter datas
-    NSString* totaltime = [NSString stringWithFormat:@"%d", _currentTimeInSeconds];
+    NSString* totaltime = [NSString stringWithFormat:@"%02li:%02li:%02li",
+                           lround(floor(_currentTimeInSeconds / 3600.)) % 100,
+                           lround(floor(_currentTimeInSeconds / 60.)) % 60,
+                           lround(floor(_currentTimeInSeconds)) % 60];
     NSString* speedData = [NSString stringWithFormat:@"%f", speed];
     NSString* distance = [NSString stringWithFormat:@"%f", totalDistance];
     
