@@ -54,14 +54,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9803DA8319FB06C400AFC574 /* SleepEz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepEz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9803DA8319FB06C400AFC574 /* SleepEzLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepEzLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9803DA8619FB06C400AFC574 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9803DA8819FB06C400AFC574 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9803DA8A19FB06C400AFC574 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9803DA8E19FB06C400AFC574 /* SleepEz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEz-Info.plist"; sourceTree = "<group>"; };
+		9803DA8E19FB06C400AFC574 /* SleepEzLogin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEzLogin-Info.plist"; sourceTree = "<group>"; };
 		9803DA9019FB06C400AFC574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9803DA9219FB06C400AFC574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9803DA9419FB06C400AFC574 /* SleepEz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SleepEz-Prefix.pch"; sourceTree = "<group>"; };
+		9803DA9419FB06C400AFC574 /* SleepEzLoginLogin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SleepEzLoginLogin-Prefix.pch"; sourceTree = "<group>"; };
 		9803DA9519FB06C400AFC574 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9803DA9619FB06C400AFC574 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9803DA9919FB06C400AFC574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		9803DA9E19FB06C400AFC574 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9803DA9F19FB06C400AFC574 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9803DAA119FB06C400AFC574 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9803DAA719FB06C400AFC574 /* SleepEzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepEzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9803DAA719FB06C400AFC574 /* SleepEzLoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepEzLoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9803DAA819FB06C400AFC574 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9803DAB019FB06C400AFC574 /* SleepEzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEzTests-Info.plist"; sourceTree = "<group>"; };
 		9803DAB219FB06C400AFC574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 		9803DA8419FB06C400AFC574 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9803DA8319FB06C400AFC574 /* SleepEz.app */,
-				9803DAA719FB06C400AFC574 /* SleepEzTests.xctest */,
+				9803DA8319FB06C400AFC574 /* SleepEzLogin.app */,
+				9803DAA719FB06C400AFC574 /* SleepEzLoginTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,10 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				98ED008719FCA050002DDA44 /* sound.caf */,
-				9803DA8E19FB06C400AFC574 /* SleepEz-Info.plist */,
+				9803DA8E19FB06C400AFC574 /* SleepEzLogin-Info.plist */,
 				9803DA8F19FB06C400AFC574 /* InfoPlist.strings */,
 				9803DA9219FB06C400AFC574 /* main.m */,
-				9803DA9419FB06C400AFC574 /* SleepEz-Prefix.pch */,
+				9803DA9419FB06C400AFC574 /* SleepEzLoginLogin-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -285,9 +285,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9803DA8219FB06C400AFC574 /* SleepEz */ = {
+		9803DA8219FB06C400AFC574 /* SleepEzLogin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9803DAB819FB06C400AFC574 /* Build configuration list for PBXNativeTarget "SleepEz" */;
+			buildConfigurationList = 9803DAB819FB06C400AFC574 /* Build configuration list for PBXNativeTarget "SleepEzLogin" */;
 			buildPhases = (
 				9803DA7F19FB06C400AFC574 /* Sources */,
 				9803DA8019FB06C400AFC574 /* Frameworks */,
@@ -297,14 +297,14 @@
 			);
 			dependencies = (
 			);
-			name = SleepEz;
+			name = SleepEzLogin;
 			productName = SleepEzLogin;
-			productReference = 9803DA8319FB06C400AFC574 /* SleepEz.app */;
+			productReference = 9803DA8319FB06C400AFC574 /* SleepEzLogin.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9803DAA619FB06C400AFC574 /* SleepEzTests */ = {
+		9803DAA619FB06C400AFC574 /* SleepEzLoginTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9803DABB19FB06C400AFC574 /* Build configuration list for PBXNativeTarget "SleepEzTests" */;
+			buildConfigurationList = 9803DABB19FB06C400AFC574 /* Build configuration list for PBXNativeTarget "SleepEzLoginTests" */;
 			buildPhases = (
 				9803DAA319FB06C400AFC574 /* Sources */,
 				9803DAA419FB06C400AFC574 /* Frameworks */,
@@ -315,9 +315,9 @@
 			dependencies = (
 				9803DAAD19FB06C400AFC574 /* PBXTargetDependency */,
 			);
-			name = SleepEzTests;
+			name = SleepEzLoginTests;
 			productName = SleepEzLoginTests;
-			productReference = 9803DAA719FB06C400AFC574 /* SleepEzTests.xctest */;
+			productReference = 9803DAA719FB06C400AFC574 /* SleepEzLoginTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -334,7 +334,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9803DA7E19FB06C400AFC574 /* Build configuration list for PBXProject "SleepEz" */;
+			buildConfigurationList = 9803DA7E19FB06C400AFC574 /* Build configuration list for PBXProject "SleepEzLogin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -347,8 +347,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9803DA8219FB06C400AFC574 /* SleepEz */,
-				9803DAA619FB06C400AFC574 /* SleepEzTests */,
+				9803DA8219FB06C400AFC574 /* SleepEzLogin */,
+				9803DAA619FB06C400AFC574 /* SleepEzLoginTests */,
 			);
 		};
 /* End PBXProject section */
@@ -406,7 +406,7 @@
 /* Begin PBXTargetDependency section */
 		9803DAAD19FB06C400AFC574 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9803DA8219FB06C400AFC574 /* SleepEz */;
+			target = 9803DA8219FB06C400AFC574 /* SleepEzLogin */;
 			targetProxy = 9803DAAC19FB06C400AFC574 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -530,9 +530,9 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEz-Prefix.pch";
-				INFOPLIST_FILE = "SleepEzLogin/SleepEz-Info.plist";
-				PRODUCT_NAME = SleepEz;
+				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEzLogin-Prefix.pch";
+				INFOPLIST_FILE = "SleepEzLogin/SleepEzLogin-Info.plist";
+				PRODUCT_NAME = SleepEzLogin;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -548,9 +548,9 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEz-Prefix.pch";
-				INFOPLIST_FILE = "SleepEzLogin/SleepEz-Info.plist";
-				PRODUCT_NAME = SleepEz;
+				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEzLogin-Prefix.pch";
+				INFOPLIST_FILE = "SleepEzLogin/SleepEzLogin-Info.plist";
+				PRODUCT_NAME = SleepEzLogin;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -571,7 +571,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "SleepEzLoginTests/SleepEzLoginTests-Info.plist";
-				PRODUCT_NAME = SleepEzTests;
+				PRODUCT_NAME = SleepEzLoginTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -589,7 +589,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEzLogin-Prefix.pch";
 				INFOPLIST_FILE = "SleepEzLoginTests/SleepEzLoginTests-Info.plist";
-				PRODUCT_NAME = SleepEzTests;
+				PRODUCT_NAME = SleepEzLoginTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -598,7 +598,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9803DA7E19FB06C400AFC574 /* Build configuration list for PBXProject "SleepEz" */ = {
+		9803DA7E19FB06C400AFC574 /* Build configuration list for PBXProject "SleepEzLogin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9803DAB619FB06C400AFC574 /* Debug */,
@@ -607,7 +607,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9803DAB819FB06C400AFC574 /* Build configuration list for PBXNativeTarget "SleepEz" */ = {
+		9803DAB819FB06C400AFC574 /* Build configuration list for PBXNativeTarget "SleepEzLogin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9803DAB919FB06C400AFC574 /* Debug */,
@@ -616,7 +616,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9803DABB19FB06C400AFC574 /* Build configuration list for PBXNativeTarget "SleepEzTests" */ = {
+		9803DABB19FB06C400AFC574 /* Build configuration list for PBXNativeTarget "SleepEzLoginTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9803DABC19FB06C400AFC574 /* Debug */,

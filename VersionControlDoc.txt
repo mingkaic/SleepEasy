@@ -72,3 +72,22 @@ import Certification to resolve "The identity 'iPhone Developer' doesn't match a
 Errors/Issue:
 ------------------
 Xcode 6 Cannot build the system: InfoPlist.strings/SleepEz-Info.plist cannot be found
+
+
+=================
+Version 1.1
+=================
+Date: 27/10/2014
+Summary: UI formating, fix to Xcode 4 issue
+
+Changes: 
+------------------
+SleepEz (changed info.plists and file naming)
+
+Resolved:
+------------------
+Xcode 6 Cannot build the system: InfoPlist.strings/SleepEz-Info.plist cannot be found
+
+Errors/Issue:
+------------------
+none

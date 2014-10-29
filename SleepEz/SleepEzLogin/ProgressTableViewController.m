@@ -74,8 +74,10 @@
                 [_sleepTimeData addObject: time];
                 [_sleepDurData addObject: duration];
             }
-            // refresh once done querying
-            [self.tableView reloadData];
+            // refresh section 1 once done querying
+            NSRange range = NSMakeRange(0, 1);
+            NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:range];
+            [self.tableView reloadSections:section withRowAnimation:UITableViewRowAnimationNone];
             NSLog(@"end sleep retrieval");
         } else {
             // Log details of the failure
@@ -103,8 +105,10 @@
                 [_exercSpeedData addObject: speed];
                 [_exercDistData addObject: dist];
             }
-            // refresh once done querying
-            [self.tableView reloadData];
+            // refresh section 2 once done querying
+            NSRange range = NSMakeRange(1, 1);
+            NSIndexSet *section = [NSIndexSet indexSetWithIndexesInRange:range];
+            [self.tableView reloadSections:section withRowAnimation:UITableViewRowAnimationNone];
             NSLog(@"end exerc retrieval");
         } else {
             // Log details of the failure
