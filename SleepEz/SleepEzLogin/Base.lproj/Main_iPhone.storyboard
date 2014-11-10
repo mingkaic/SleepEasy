@@ -324,7 +324,15 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Progress Table" id="BHh-sa-0ky"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Progress Table" id="BHh-sa-0ky">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="t16-ZG-s59">
+                            <connections>
+                                <action selector="EditCells:" destination="TCd-VS-u84" id="Zl9-dT-xwe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XyZ-pz-0nm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

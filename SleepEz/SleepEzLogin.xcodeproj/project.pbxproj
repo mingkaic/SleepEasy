@@ -61,7 +61,6 @@
 		9803DA8E19FB06C400AFC574 /* SleepEzLogin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEzLogin-Info.plist"; sourceTree = "<group>"; };
 		9803DA9019FB06C400AFC574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9803DA9219FB06C400AFC574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9803DA9419FB06C400AFC574 /* SleepEzLoginLogin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SleepEzLoginLogin-Prefix.pch"; sourceTree = "<group>"; };
 		9803DA9519FB06C400AFC574 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9803DA9619FB06C400AFC574 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9803DA9919FB06C400AFC574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		9803DAB019FB06C400AFC574 /* SleepEzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEzTests-Info.plist"; sourceTree = "<group>"; };
 		9803DAB219FB06C400AFC574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9803DAB419FB06C400AFC574 /* SleepEzLoginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepEzLoginTests.m; sourceTree = "<group>"; };
+		9811D04C1A0FE6DD005FBB1D /* SleepEzLogin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SleepEzLogin-Prefix.pch"; sourceTree = "<group>"; };
 		98394F4319FC1B5A008A779B /* SleepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepViewController.h; sourceTree = "<group>"; };
 		98394F4419FC1B5A008A779B /* SleepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepViewController.m; sourceTree = "<group>"; };
 		986F2CED19FC4A82008510D4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 				98ED008719FCA050002DDA44 /* sound.caf */,
 				9803DA8E19FB06C400AFC574 /* SleepEzLogin-Info.plist */,
 				9803DA8F19FB06C400AFC574 /* InfoPlist.strings */,
+				9811D04C1A0FE6DD005FBB1D /* SleepEzLogin-Prefix.pch */,
 				9803DA9219FB06C400AFC574 /* main.m */,
-				9803DA9419FB06C400AFC574 /* SleepEzLoginLogin-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -533,6 +533,7 @@
 				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEzLogin-Prefix.pch";
 				INFOPLIST_FILE = "SleepEzLogin/SleepEzLogin-Info.plist";
 				PRODUCT_NAME = SleepEzLogin;
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
