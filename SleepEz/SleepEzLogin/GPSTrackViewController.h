@@ -15,6 +15,7 @@
 @interface GPSTrackViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MKOverlay> {
     
     CLLocationManager *lm; //core lcoation manager instance
+    CLLocationManager *weatherCM;
     
     NSMutableArray *trackPointArray; //Array to store location points
     
@@ -26,6 +27,12 @@
 - (IBAction)startTracking:(id)sender;
 - (IBAction)DisplayGPS:(id)sender;
 - (IBAction)backToMenu:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *weatherCity;
+@property (weak, nonatomic) IBOutlet UILabel *weatherTemperature;
+@property (weak, nonatomic) IBOutlet UILabel *weatherDescription;
+@property (weak, nonatomic) IBOutlet UILabel *weatherO;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;

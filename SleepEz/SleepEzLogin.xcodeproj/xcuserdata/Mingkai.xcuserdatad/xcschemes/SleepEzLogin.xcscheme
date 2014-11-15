@@ -7,45 +7,17 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
+            buildForTesting = "YES"
+            buildForRunning = "YES"
             buildForProfiling = "YES"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9803DA8219FB06C400AFC574"
                BuildableName = "SleepEz.app"
                BlueprintName = "SleepEz"
                ReferencedContainer = "container:SleepEz.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9803DA8219FB06C400AFC574"
-               BuildableName = "SleepEzLogin.app"
-               BlueprintName = "SleepEzLogin"
-               ReferencedContainer = "container:SleepEzLogin.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9803DAA619FB06C400AFC574"
-               BuildableName = "SleepEzLoginTests.xctest"
-               BlueprintName = "SleepEzLoginTests"
-               ReferencedContainer = "container:SleepEzLogin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -71,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9803DA8219FB06C400AFC574"
-            BuildableName = "SleepEzLogin.app"
-            BlueprintName = "SleepEzLogin"
-            ReferencedContainer = "container:SleepEzLogin.xcodeproj">
+            BuildableName = "SleepEz.app"
+            BlueprintName = "SleepEz"
+            ReferencedContainer = "container:SleepEz.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -81,25 +53,20 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
-      askForAppToLaunch = "Yes"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <IDERemoteRunnable
-         RemotePath = "/Users/Mingkai/Library/Developer/CoreSimulator/Devices/AD1938B7-803D-4826-A48C-8616AE4C3781/data/Containers/Bundle/Application/25088885-0A40-4E42-8711-C04F1668FE3D/SleepEz.app"
-         BundleIdentifier = "/Users/Mingkai/Library/Developer/CoreSimulator/Devices/AD1938B7-803D-4826-A48C-8616AE4C3781/data/Containers/Bundle/Application/25088885-0A40-4E42-8711-C04F1668FE3D/SleepEz.app">
-      </IDERemoteRunnable>
-      <MacroExpansion>
+      <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9803DA8219FB06C400AFC574"
-            BuildableName = "SleepEzLogin.app"
-            BlueprintName = "SleepEzLogin"
-            ReferencedContainer = "container:SleepEzLogin.xcodeproj">
+            BuildableName = "SleepEz.app"
+            BlueprintName = "SleepEz"
+            ReferencedContainer = "container:SleepEz.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

@@ -11,8 +11,6 @@
 
 @interface ProgressTableViewController : UITableViewController
 
-- (IBAction)EditCells:(id)sender;
-
 @property (strong, nonatomic) NSMutableArray* sleepTimeData;
 @property (strong, nonatomic) NSMutableArray* sleepDurData;
 

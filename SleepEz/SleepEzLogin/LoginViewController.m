@@ -74,6 +74,10 @@
         } else {
             // access and request matching identity verification from database
             [self checkPasswordMatch];
+            
+            SaveAndLoad *saveID = [[SaveAndLoad alloc] init];
+            [saveID saveID:[self.usrField text]];
+            [saveID savePassWord:[self.pwField text]];
         }
     }
     @catch (NSException * e) {

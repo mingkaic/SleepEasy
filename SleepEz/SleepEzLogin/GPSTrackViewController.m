@@ -7,16 +7,20 @@
 //
 
 #import "GPSTrackViewController.h"
+#import "Weather.h"
 
 @interface GPSTrackViewController ()
 
 @end
 
-@implementation GPSTrackViewController
+@implementation GPSTrackViewController {
+    Weather *theWeather;
+}
 
 double totalDistance;
 CLLocationSpeed speed;
 bool onClickStartTrackingButton;
+bool showOnlyWeahter;
 
 @synthesize mapview;
 
@@ -30,6 +34,19 @@ bool onClickStartTrackingButton;
     onClickStartTrackingButton = FALSE;
     totalDistance = 0;
     speed = 0;
+    
+    showOnlyWeahter = true;
+    theWeather = [[Weather alloc] init];
+    weatherCM = [[CLLocationManager alloc] init];
+    weatherCM.delegate = self;
+    #ifdef __IPHONE_8_0
+    if(IS_OS_8_OR_LATER) {
+        // Use one or the other, not both. Depending on what you put in info.plist
+        [weatherCM requestAlwaysAuthorization];
+    }
+    #endif
+
+    [weatherCM startUpdatingLocation];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,11 +59,29 @@ bool onClickStartTrackingButton;
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)showWeather
+{
+    if( theWeather.city == Nil)
+      _weatherCity.text = @"Loading..";
+    else
+        _weatherCity.text = [NSString stringWithFormat: @"%@", theWeather.city];
+ 
+    _weatherTemperature.text = [NSString stringWithFormat: @"%0.0f", theWeather.tempCurrent];
+    
+    if( theWeather.conditions[0] == Nil)
+        _weatherDescription.text = @"Loading..";
+    else
+        _weatherDescription.text = [NSString stringWithFormat: @"%@", theWeather.conditions[0][@"description"]];
+}
+
 - (IBAction)startTracking:(id)sender {
   //  [mapview removeOverlays: mapview.overlays];
     
     // if onClick "Start Tracking" button, then start location manager and change the text of the button to "Stop Tracking"
     if( onClickStartTrackingButton == FALSE) {
+        showOnlyWeahter = false;
+        
         [self clearTrack];
         // reset and start Timer
         [self resetTimer];
@@ -85,6 +120,7 @@ bool onClickStartTrackingButton;
     }
     // if onClick "Stop Tracking" button, then stop  location manager and change the text of the button to "Start Tracking"
     else {
+        showOnlyWeahter = true;
         [self stopTracking];
         [self sendData];
         // stop timer
@@ -95,10 +131,32 @@ bool onClickStartTrackingButton;
 }
 
 
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
     //get the latest location
     CLLocation *currentLocation = [locations lastObject];
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:currentLocation
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       NSLog(@"placemark.ISOcountryCode %@",placemark.locality);
+                       theWeather.city = placemark.locality;
+                       [theWeather getCurrent:placemark.locality];
+                       NSLog(@"placemark.locality %@",theWeather.city);
+                       
+                       
+                   }];
+    
+    [self showWeather];
+    
+    
+    if(!showOnlyWeahter) {
     
     //store latest location in stored track array;
     [trackPointArray addObject:currentLocation];
@@ -124,6 +182,9 @@ bool onClickStartTrackingButton;
   
     // display speed
     speed = lm.location.speed;
+    if( speed < 0 )
+        speed = 0;
+        
     _speedNumber.text = [NSString stringWithFormat: @"%.1f", speed];
     
     // display altitude
@@ -150,6 +211,8 @@ bool onClickStartTrackingButton;
     
     // distance between the starting point and current point
  //   CLLocationDistance distanceBetween = [[locations firstObject] distanceFromLocation: [locations lastObject]];
+        
+    }
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
@@ -201,6 +264,11 @@ bool onClickStartTrackingButton;
     _altitudeNumber.hidden = TRUE;
     _altitudeM.hidden = TRUE;
     _startTrackingButton.hidden = TRUE;
+    
+    _weatherCity.hidden = TRUE;
+    _weatherDescription.hidden = TRUE;
+    _weatherTemperature.hidden = TRUE;
+    _weatherO.hidden = TRUE;
 }
 
 - (IBAction)backToMenu:(id)sender {
@@ -222,6 +290,11 @@ bool onClickStartTrackingButton;
     _altitudeNumber.hidden = FALSE;
     _altitudeM.hidden = FALSE;
     _startTrackingButton.hidden = FALSE;
+    
+    _weatherCity.hidden = FALSE;
+    _weatherDescription.hidden = FALSE;
+    _weatherTemperature.hidden = FALSE;
+    _weatherO.hidden = FALSE;
 }
 
 - (NSTimer *)createTimer {
@@ -265,10 +338,7 @@ bool onClickStartTrackingButton;
 // attach this function to an action
 - (void)sendData{
     // enter datas
-    NSString* totaltime = [NSString stringWithFormat:@"%02li:%02li:%02li",
-                           lround(floor(_currentTimeInSeconds / 3600.)) % 100,
-                           lround(floor(_currentTimeInSeconds / 60.)) % 60,
-                           lround(floor(_currentTimeInSeconds)) % 60];
+    NSString* totaltime = [NSString stringWithFormat:@"%d", _currentTimeInSeconds];
     NSString* speedData = [NSString stringWithFormat:@"%f", speed];
     NSString* distance = [NSString stringWithFormat:@"%f", totalDistance];
     

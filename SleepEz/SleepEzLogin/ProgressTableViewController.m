@@ -223,6 +223,4 @@
 }
 */
 
-- (IBAction)EditCells:(id)sender {
-}
 @end

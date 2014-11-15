@@ -324,15 +324,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Progress Table" id="BHh-sa-0ky">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="t16-ZG-s59">
-                            <connections>
-                                <action selector="EditCells:" destination="TCd-VS-u84" id="Zl9-dT-xwe"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Progress Table" id="BHh-sa-0ky"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XyZ-pz-0nm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -626,8 +618,32 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oKp-4o-K4p">
-                                <rect key="frame" x="0.0" y="77" width="320" height="491"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vancouver" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFL-x6-LDm">
+                                <rect key="frame" x="30" y="49" width="128" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWB-ff-JK8">
+                                <rect key="frame" x="164" y="37" width="71" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sky is Clear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVq-fi-6VG">
+                                <rect key="frame" x="78" y="83" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ck-to-fNJ">
+                                <rect key="frame" x="233" y="33" width="17" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QYc-na-TkN">
+                                <rect key="frame" x="-7" y="49" width="327" height="488"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -646,13 +662,17 @@
                         <outlet property="distanceName" destination="yqT-RS-teH" id="z8u-zC-YO9"/>
                         <outlet property="distanceNumber" destination="Smo-2y-xgl" id="WIe-xh-X5i"/>
                         <outlet property="gps" destination="0qd-te-M9k" id="APq-MX-S2h"/>
-                        <outlet property="mapview" destination="oKp-4o-K4p" id="R7E-Xa-tRy"/>
+                        <outlet property="mapview" destination="QYc-na-TkN" id="e19-g0-pux"/>
                         <outlet property="speedKmH" destination="PwO-zn-sKX" id="9kM-ED-Ag2"/>
                         <outlet property="speedName" destination="6Ce-lk-J6P" id="rsd-Ik-hNm"/>
                         <outlet property="speedNumber" destination="Ihj-oe-ivV" id="ZQu-sm-xVu"/>
                         <outlet property="startTrackingButton" destination="Rv1-X1-GPt" id="jTB-e3-4IB"/>
                         <outlet property="timeName" destination="KCz-ec-syA" id="j8X-xR-PaF"/>
                         <outlet property="timeNumber" destination="Yw8-Va-1Nc" id="544-Xc-TF6"/>
+                        <outlet property="weatherCity" destination="ZFL-x6-LDm" id="flt-0P-C63"/>
+                        <outlet property="weatherDescription" destination="qVq-fi-6VG" id="t5P-Bv-y29"/>
+                        <outlet property="weatherO" destination="9Ck-to-fNJ" id="qVO-Zb-hZv"/>
+                        <outlet property="weatherTemperature" destination="qWB-ff-JK8" id="fuP-jm-eeG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVD-fn-bIl" sceneMemberID="firstResponder"/>

@@ -91,3 +91,17 @@ Xcode 6 Cannot build the system: InfoPlist.strings/SleepEz-Info.plist cannot be 
 Errors/Issue:
 ------------------
 none
+
+=================
+Version 2.0
+=================
+Date: 9/11/2014
+Summary: UI formating, added weather feature, edited default notification settings, added local database for login
+
+Changes: 
+------------------
+Exercise, Login (changed info.plists and file naming)
+
+Errors/Issue:
+------------------
+none
