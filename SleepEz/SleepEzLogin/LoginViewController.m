@@ -7,9 +7,12 @@
 //
 
 #import "LoginViewController.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
-
+{
+    NSManagedObjectContext *context;
+}
 @end
 
 @implementation LoginViewController
@@ -17,6 +20,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    AppDelegate *appdelegate = [[UIApplication sharedApplication]delegate];
+    context = [appdelegate managedObjectContext];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -74,10 +80,6 @@
         } else {
             // access and request matching identity verification from database
             [self checkPasswordMatch];
-            
-            SaveAndLoad *saveID = [[SaveAndLoad alloc] init];
-            [saveID saveID:[self.usrField text]];
-            [saveID savePassWord:[self.pwField text]];
         }
     }
     @catch (NSException * e) {
@@ -100,6 +102,21 @@
 - (void) registerNewUser
 {
     NSLog(@"registering new user...");
+    
+    SaveAndLoad *save = [[SaveAndLoad alloc] init];
+    [save saveID: _usrField.text];
+    
+    // immediately save to local database
+    NSEntityDescription *entitydesc = [NSEntityDescription entityForName: @"User" inManagedObjectContext:context];
+    NSManagedObject *newUser = [[NSManagedObject alloc] initWithEntity:entitydesc insertIntoManagedObjectContext:context];
+    
+    [newUser setValue: _usrField.text forKey:@"username"];
+    [newUser setValue: _mailField.text forKey:@"email"];
+    [newUser setValue: _pwField.text forKey:@"password"];
+    [newUser setValue: @"0" forKey:@"age"];
+    NSError *error;
+    [context save:&error];
+    
     // default data
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:YES forKey:@"registered"];
@@ -111,21 +128,52 @@
     newusr.password = _pwField.text;
     [newusr signUpInBackgroundWithBlock: ^(BOOL succeeded, NSError *error) {
         if (!error) {
-            NSLog(@"Registration successful");
+            NSLog(@"Online Registration successful");
             [self ScreenClear];
-            [self performSegueWithIdentifier:@"login_success" sender:self];
         }
         else {
-            NSLog(@"There was an error in registration");
+            NSLog(@"There was an error in online registration");
         }
     }];
+    [self performSegueWithIdentifier:@"login_success" sender:self];
 }
 
 - (IBAction)LoginClick:(id)sender
 {
+    SaveAndLoad *save = [[SaveAndLoad alloc] init];
+    [save saveID: _usrField.text];
+    
+    NSEntityDescription *entitydesc = [NSEntityDescription entityForName: @"User" inManagedObjectContext:context];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity: entitydesc];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"username like %@ and password like %@", _usrField.text, _pwField.text];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *matchingData = [context executeFetchRequest:request error:&error];
+    
+    if (matchingData.count > 0) {
+        NSLog(@"login credentials correct");
+        [self ScreenClear];
+        [self performSegueWithIdentifier:@"login_success" sender:self];
+        return;
+    }
+    
     // uses parse server
     [PFUser logInWithUsernameInBackground:_usrField.text password:_pwField.text block:^(PFUser* user, NSError *error) {
         if (!error) {
+            // save this into local data
+            NSManagedObject *newUser = [[NSManagedObject alloc] initWithEntity:entitydesc insertIntoManagedObjectContext:context];
+            
+            [newUser setValue: _usrField.text forKey:@"username"];
+            [newUser setValue: user.email forKey:@"email"];
+            [newUser setValue: _pwField.text forKey:@"password"];
+            [newUser setValue: user[@"age"] forKey:@"age"];
+            NSError *error;
+            [context save:&error];
+            
             // authentication successful
             NSLog(@"login credentials correct");
             [self ScreenClear];

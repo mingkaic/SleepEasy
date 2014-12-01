@@ -31,4 +31,17 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)Select:(id)sender {
+    
+    float averageSpeed= 5;
+    
+    //input done here by adding object to mutablearray
+    //GlobalVars *globals = [GlobalVars sharedInstance];
+    
+    //[globals.exerciseAverages addObject:[NSString stringWithFormat:@"%0.4f", averageSpeed]];
+    
+    //if (averageSpeed)
+        //exerciseCount++;
+}
+
 @end

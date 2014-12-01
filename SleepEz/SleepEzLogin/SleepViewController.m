@@ -7,9 +7,13 @@
 //
 
 #import "SleepViewController.h"
+#import "AppDelegate.h"
+#import "SaveAndLoad.h"
 
 @interface SleepViewController ()
-
+{
+    NSManagedObjectContext *context;
+}
 @end
 
 @implementation SleepViewController
@@ -17,7 +21,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor orangeColor];
+    
+    _dateTimePicker.datePickerMode=UIDatePickerModeTime;
     _sleeping = NO;
+    
+    AppDelegate *appdelegate = [[UIApplication sharedApplication]delegate];
+    context = [appdelegate managedObjectContext];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -101,22 +111,33 @@
     _sleepBtn.hidden = NO;
     _stopsleepBtn.hidden = YES;
     
-    NSLog(@"sending sleep data...");
-    PFUser *usr = [PFUser currentUser];
-    PFObject *object = [PFObject objectWithClassName:@"Sleep"];
-    
     NSTimeInterval interval = [endtime timeIntervalSinceDate:_sleepTime];
     
     NSString* duration = [NSString stringWithFormat:@"%02li:%02li:%02li",
-                     lround(floor(interval / 3600.)) % 100,
-                     lround(floor(interval / 60.)) % 60,
-                     lround(floor(interval)) % 60];
+                          lround(floor(interval / 3600.)) % 100,
+                          lround(floor(interval / 60.)) % 60,
+                          lround(floor(interval)) % 60];
     
-    object[@"userId"] = usr.objectId;
-    NSLog(usr.objectId);
-    object[@"beginSleep"] = _sleepTime;
-    object[@"durationSleep"] = duration;
-    [object saveInBackground];
+    NSLog(@"sending sleep data...");
+    SaveAndLoad *load = [[SaveAndLoad alloc] init];
+    NSEntityDescription *entitydesc = [NSEntityDescription entityForName: @"Sleep" inManagedObjectContext:context];
+    NSManagedObject *newSleep = [[NSManagedObject alloc] initWithEntity:entitydesc insertIntoManagedObjectContext:context];
+    
+    [newSleep setValue: [load loadID] forKey:@"username"];
+    [newSleep setValue: _sleepTime forKey:@"starttime"];
+    [newSleep setValue: duration forKey:@"duration"];
+    NSError *error;
+    [context save:&error];
+    
+    PFUser *usr = [PFUser currentUser];
+    PFObject *object = [PFObject objectWithClassName:@"Sleep"];
+    
+    if (usr) {
+        object[@"userId"] = usr.objectId;
+        object[@"beginSleep"] = _sleepTime;
+        object[@"durationSleep"] = duration;
+        [object saveInBackground];
+    }
 }
 
 @end

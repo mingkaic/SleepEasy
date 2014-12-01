@@ -44,6 +44,10 @@
 		98FADC0B19FD75C900616EFD /* ProgressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FADC0A19FD75C900616EFD /* ProgressTableViewController.m */; };
 		990811AF1A0EFA30001BF340 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 990811AE1A0EFA30001BF340 /* Weather.m */; };
 		99F9BD661A1190D80062491F /* SaveAndLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F9BD651A1190D80062491F /* SaveAndLoad.m */; };
+		D55242D81A2A9B87001150EC /* RepModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D55242D61A2A9B87001150EC /* RepModel.xcdatamodeld */; };
+		D55242DE1A2A9C4D001150EC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D55242DD1A2A9C4D001150EC /* User.m */; };
+		D55242E11A2A9C95001150EC /* Sleep.m in Sources */ = {isa = PBXBuildFile; fileRef = D55242E01A2A9C95001150EC /* Sleep.m */; };
+		D5A34AAA1A2BAA5600D8E84F /* SleepEzExerc.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A34AA91A2BAA5600D8E84F /* SleepEzExerc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +68,6 @@
 		9803DA8E19FB06C400AFC574 /* SleepEzLogin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEzLogin-Info.plist"; sourceTree = "<group>"; };
 		9803DA9019FB06C400AFC574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9803DA9219FB06C400AFC574 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9803DA9419FB06C400AFC574 /* SleepEzLoginLogin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SleepEzLoginLogin-Prefix.pch"; sourceTree = "<group>"; };
 		9803DA9519FB06C400AFC574 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9803DA9619FB06C400AFC574 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9803DA9919FB06C400AFC574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		9803DAA119FB06C400AFC574 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9803DAA719FB06C400AFC574 /* SleepEzLoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepEzLoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9803DAA819FB06C400AFC574 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9803DAB019FB06C400AFC574 /* SleepEzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SleepEzTests-Info.plist"; sourceTree = "<group>"; };
 		9803DAB219FB06C400AFC574 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9803DAB419FB06C400AFC574 /* SleepEzLoginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SleepEzLoginTests.m; sourceTree = "<group>"; };
 		98067576CC03DED783BA34C7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 		99F9BD641A1190D80062491F /* SaveAndLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveAndLoad.h; sourceTree = "<group>"; };
 		99F9BD651A1190D80062491F /* SaveAndLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveAndLoad.m; sourceTree = "<group>"; };
 		9F2F48E1F34F791E91D2B180 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55242D51A2A6009001150EC /* SleepEzLogin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SleepEzLogin-Prefix.pch"; sourceTree = "<group>"; };
+		D55242D71A2A9B87001150EC /* RepModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RepModel.xcdatamodel; sourceTree = "<group>"; };
+		D55242DC1A2A9C4D001150EC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D55242DD1A2A9C4D001150EC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D55242DF1A2A9C95001150EC /* Sleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sleep.h; sourceTree = "<group>"; };
+		D55242E01A2A9C95001150EC /* Sleep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sleep.m; sourceTree = "<group>"; };
+		D5A34AA81A2BAA5600D8E84F /* SleepEzExerc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SleepEzExerc.h; sourceTree = "<group>"; };
+		D5A34AA91A2BAA5600D8E84F /* SleepEzExerc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleepEzExerc.m; sourceTree = "<group>"; };
 		FF3FFD796752E8A8FC89F0BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,8 +228,15 @@
 				98394F4219FC1953008A779B /* ViewControllers */,
 				990811AD1A0EFA30001BF340 /* Weather.h */,
 				990811AE1A0EFA30001BF340 /* Weather.m */,
+				D55242DF1A2A9C95001150EC /* Sleep.h */,
+				D55242E01A2A9C95001150EC /* Sleep.m */,
+				D5A34AA81A2BAA5600D8E84F /* SleepEzExerc.h */,
+				D5A34AA91A2BAA5600D8E84F /* SleepEzExerc.m */,
+				D55242DC1A2A9C4D001150EC /* User.h */,
+				D55242DD1A2A9C4D001150EC /* User.m */,
 				99F9BD641A1190D80062491F /* SaveAndLoad.h */,
 				99F9BD651A1190D80062491F /* SaveAndLoad.m */,
+				D55242D61A2A9B87001150EC /* RepModel.xcdatamodeld */,
 			);
 			name = SleepEz;
 			path = SleepEzLogin;
@@ -228,11 +245,11 @@
 		9803DA8D19FB06C400AFC574 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D55242D51A2A6009001150EC /* SleepEzLogin-Prefix.pch */,
 				98ED008719FCA050002DDA44 /* sound.caf */,
 				9803DA8E19FB06C400AFC574 /* SleepEzLogin-Info.plist */,
 				9803DA8F19FB06C400AFC574 /* InfoPlist.strings */,
 				9803DA9219FB06C400AFC574 /* main.m */,
-				9803DA9419FB06C400AFC574 /* SleepEzLoginLogin-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -250,7 +267,6 @@
 		9803DAAF19FB06C400AFC574 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9803DAB019FB06C400AFC574 /* SleepEzTests-Info.plist */,
 				9803DAB119FB06C400AFC574 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -449,8 +465,12 @@
 				990811AF1A0EFA30001BF340 /* Weather.m in Sources */,
 				99F9BD661A1190D80062491F /* SaveAndLoad.m in Sources */,
 				9803DAA019FB06C400AFC574 /* ViewController.m in Sources */,
+				D5A34AAA1A2BAA5600D8E84F /* SleepEzExerc.m in Sources */,
+				D55242DE1A2A9C4D001150EC /* User.m in Sources */,
+				D55242E11A2A9C95001150EC /* Sleep.m in Sources */,
 				9803DA9719FB06C400AFC574 /* AppDelegate.m in Sources */,
 				9803DA9319FB06C400AFC574 /* main.m in Sources */,
+				D55242D81A2A9B87001150EC /* RepModel.xcdatamodeld in Sources */,
 				988BE62119FC39F700DB29B6 /* ProfileViewController.m in Sources */,
 				9870170B19FB29CC001B395B /* LoginViewController.m in Sources */,
 			);
@@ -596,6 +616,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEzLogin-Prefix.pch";
 				INFOPLIST_FILE = "SleepEzLogin/SleepEzLogin-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SleepEzLogin/CorePlotDemo",
+				);
 				PRODUCT_NAME = SleepEzLogin;
 				WRAPPER_EXTENSION = app;
 			};
@@ -615,6 +639,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SleepEzLogin/SleepEzLogin-Prefix.pch";
 				INFOPLIST_FILE = "SleepEzLogin/SleepEzLogin-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SleepEzLogin/CorePlotDemo",
+				);
 				PRODUCT_NAME = SleepEzLogin;
 				WRAPPER_EXTENSION = app;
 			};
@@ -691,6 +719,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D55242D61A2A9B87001150EC /* RepModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D55242D71A2A9B87001150EC /* RepModel.xcdatamodel */,
+			);
+			currentVersion = D55242D71A2A9B87001150EC /* RepModel.xcdatamodel */;
+			path = RepModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9803DA7B19FB06C400AFC574 /* Project object */;
 }

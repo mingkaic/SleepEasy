@@ -105,3 +105,17 @@ Exercise, Login (changed info.plists and file naming)
 Errors/Issue:
 ------------------
 none
+
+=================
+Version 3.0
+=================
+Date: 30/11/2014
+Summary: UI formating, added core data, data synchronization from local core data to online parse database.
+
+Changes: 
+------------------
+Exercise, Login, Sleep, ViewProgress (changed info.plists and file naming), new RepModel.xcdatamodeld, data classes
+
+Errors/Issue:
+------------------
+none

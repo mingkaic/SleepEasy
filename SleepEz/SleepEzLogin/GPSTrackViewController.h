@@ -37,9 +37,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;
 @property (weak, nonatomic) IBOutlet UIButton *gps;
-@property (weak, nonatomic) IBOutlet UILabel *caloriesName;
-@property (weak, nonatomic) IBOutlet UILabel *caloriesNumber;
-@property (weak, nonatomic) IBOutlet UILabel *caloriesKcal;
 @property (weak, nonatomic) IBOutlet UILabel *speedName;
 @property (weak, nonatomic) IBOutlet UILabel *speedNumber;
 @property (weak, nonatomic) IBOutlet UILabel *speedKmH;
